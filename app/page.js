@@ -3,6 +3,12 @@ import ButtonLogin from "@/components/ButtonLogin";
 export default function Home() {
   const isLoggedIn = true;
   const name = "Dorthy";
+  const PricingFeatures = [
+    "Collect customer feedback",
+    "Unlimited boards",
+    "Admin Dashboard",
+    "24/7",
+  ];
 
   return (
     <main>
@@ -51,74 +57,77 @@ export default function Home() {
               </div>
             </div>
             <ul className="space-y-1.5">
-              <li className="flex gap-2 items-center mt-4">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="currentColor"
-                  className="text-success size-4"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="m4.5 12.75 6 6 9-13.5"
-                  />
-                </svg>
-                Collect customer feedback
-              </li>
-              <li className="flex gap-2 items-center">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="currentColor"
-                  className="text-success size-4"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="m4.5 12.75 6 6 9-13.5"
-                  />
-                </svg>
-                Unlimited boards
-              </li>
-              <li className="flex gap-2 items-center">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="currentColor"
-                  className="text-success size-4"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="m4.5 12.75 6 6 9-13.5"
-                  />
-                </svg>
-                Admin Dashboard
-              </li>
-              <li className="flex gap-2 items-center">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="currentColor"
-                  className="text-success size-4"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="m4.5 12.75 6 6 9-13.5"
-                  />
-                </svg>
-                24/7
-              </li>
+              {PricingFeatures.map((Item) => {
+                return (
+                  <li className="flex gap-2 items-center" key={Item}>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      className="text-success size-4"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="m4.5 12.75 6 6 9-13.5"
+                      />
+                    </svg>
+                    {Item}
+                  </li>
+                );
+              })}
+            </ul>
+            <ButtonLogin
+              isLoggedIn={isLoggedIn}
+              name={name}
+              extraStyle={"w-full"}
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="bg-base-200">
+        <div className="px-8 py-32 max-w-5xl mx-auto">
+          <p className="uppercase font-medium text-center opacity-70 mb-4 text-primary">
+            FAQ
+          </p>
+          <h2 className="text-3xl lg:text-4xl font-bold mb-12 text-center">
+            Frequently Asked Questions
+          </h2>
+          <div className="p-8 bg-base-100 max-w-96 rounded-lg mx-auto space-y-6">
+            <div className="">
+              <div className="inline-block font-black text-4xl pr-0.5">
+                $300
+              </div>
+              <div className="inline-block text-sm font-medium opacity-60">
+                /month
+              </div>
+            </div>
+            <ul className="space-y-1.5">
+              {PricingFeatures.map((Item) => {
+                return (
+                  <li className="flex gap-2 items-center" key={Item}>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      className="text-success size-4"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="m4.5 12.75 6 6 9-13.5"
+                      />
+                    </svg>
+                    {Item}
+                  </li>
+                );
+              })}
             </ul>
             <ButtonLogin
               isLoggedIn={isLoggedIn}
